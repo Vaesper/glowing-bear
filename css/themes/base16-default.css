@@ -22,7 +22,7 @@ body {
     color: var(--base05);
 }
 tr.bufferline {
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 a:link {
@@ -34,28 +34,31 @@ a:visited {
 }
 
 #topbar .actions > a:visited {
-    color: var(--base0D);
+    color: var(--base05);
 }
 
 a:hover, a:active, a:focus,
 #nicklist a:hover, #nicklist a:active, #nicklist a:focus {
-    color: var(--base0D);
+    background-color: var(--base0D);
+    text-decoration: none;
 }
 
-a:hover, a:active, a:focus,
-#nicklist a:hover, #nicklist a:active, #nicklist a:focus {
-    background-color: var(--base03);
-    text-decoration: underline;
+a:hover span,
+a:active span,
+a:focus span,
+#nicklist a:hover span,
+#nicklist a:active span,
+#nicklist a:focus span {
+    color: var(--base01);
 }
 
 a:visited:hover, a:visited:active, a:visited:focus {
-    color: var(--base0E);
+    background: var(--base0E);
 }
 
-#topbar a:hover, #topbar a:active,
-#topbar .actions > a:hover > i,
-#topbar .actions > a:active > i {
-    background-color: var(--base01);
+#topbar a:hover, #topbar a:active {
+    background: var(--base0D);
+    color: var(--base00);
 }
 
 .form-control {
@@ -72,14 +75,17 @@ a:visited:hover, a:visited:active, a:visited:focus {
 }
 
 .form-control option {
-    color: var(--base05);
     background: var(--base01);
+    color: var(--base05);
 }
 
 html {
     background-color: inherit;
 }
 
+.nav-pills > li > a {
+    color: var(--base05);
+}
 /* fix for mobile firefox which ignores :hover */
 .nav-pills > li > a:hover,
 .nav-pills > li > a:active,
@@ -93,7 +99,7 @@ html {
 .nav-pills > li.notification > a:hover,
 .nav-pills > li.notification > a:active,
 .nav-pills > li.notification > a:focus {
-    background-color: var(--base03);
+    background-color: var(--base0D);
 }
 
 .nav-pills > li > a:hover,
@@ -108,7 +114,7 @@ html {
 .nav-pills > li.active > a:active span,
 .nav-pills > li.active > a:focus,
 .nav-pills > li.active > a:focus span {
-    color: var(--base06);
+    color: var(--base00);
 }
 
 .nav-pills > li > a:hover span,
@@ -124,25 +130,28 @@ html {
     color: var(--base04);
 }
 
-.nav-pills > li.buffer.channel.highlight a:hover span:last-of-type:before,
-.nav-pills > li.buffer.channel.highlight a:active span:last-of-type:before,
-.nav-pills > li.buffer.channel.highlight a:focus span:last-of-type:before,
-.nav-pills > li.buffer.channel.active a:hover span:last-of-type:before,
-.nav-pills > li.buffer.channel.active a:active span:last-of-type:before,
-.nav-pills > li.buffer.channel.active a:focus span:last-of-type:before,
-.nav-pills > li.buffer.channel.unread a span:last-of-type:before,
-.nav-pills > li.buffer.channel.unread a:hover span:last-of-type:before,
-.nav-pills > li.buffer.channel.unread a:active span:last-of-type:before,
-.nav-pills > li.buffer.channel.unread a:focus span:last-of-type:before,
-.nav-pills > li.buffer.channel.notification a:hover span:last-of-type:before,
-.nav-pills > li.buffer.channel.notification a:active span:last-of-type:before,
-.nav-pills > li.buffer.channel.notification a:focus span:last-of-type:before {
+.nav-pills > li.buffer.channel.unread a span:last-of-type:before {
     color: var(--base05);
 }
 
+.nav-pills > li.buffer.channel a:hover span:last-of-type:before,
+.nav-pills > li.buffer.channel a:active span:last-of-type:before,
+.nav-pills > li.buffer.channel a:focus span:last-of-type:before,
 .nav-pills > li.buffer.channel.highlight a span:last-of-type:before,
+.nav-pills > li.buffer.channel.highlight a:hover span:last-of-type:before,
+.nav-pills > li.buffer.channel.highlight a:active span:last-of-type:before,
+.nav-pills > li.buffer.channel.highlight a:focus span:last-of-type:before,
 .nav-pills > li.buffer.channel.active a span:last-of-type:before,
-.nav-pills > li.buffer.channel.notification a span:last-of-type:before {
+.nav-pills > li.buffer.channel.active a:hover span:last-of-type:before,
+.nav-pills > li.buffer.channel.active a:active span:last-of-type:before,
+.nav-pills > li.buffer.channel.active a:focus span:last-of-type:before,
+.nav-pills > li.buffer.channel.unread a:hover span:last-of-type:before,
+.nav-pills > li.buffer.channel.unread a:active span:last-of-type:before,
+.nav-pills > li.buffer.channel.unread a:focus span:last-of-type:before,
+.nav-pills > li.buffer.channel.notification a span:last-of-type:before,
+.nav-pills > li.buffer.channel.notification a:hover span:last-of-type:before,
+.nav-pills > li.buffer.channel.notification a:active span:last-of-type:before,
+.nav-pills > li.buffer.channel.notification a:focus span:last-of-type:before {
     color: var(--base02);
 }
 
@@ -154,18 +163,18 @@ html {
 }
 
 .nav-pills > li.active > a {
-    background-color: var(--base0E);
-    color: var(--base01);
+    background-color: var(--base05);
+    color: var(--base00);
 }
 
 .nav-pills > li.highlight > a {
     background-color: var(--base0A);
-    color: var(--base01);
+    color: var(--base00);
 }
 
 .nav-pills > li.highlight > a > span {
     background-color: transparent;
-    color: var(--base01);
+    color: var(--base00);
 }
 
 .nav-pills > li.unread > a {
@@ -195,7 +204,7 @@ html {
 .nav-pills > li.notification > a:active span,
 .nav-pills > li.notification > a:focus,
 .nav-pills > li.notification > a:focus span {
-    color: var(--base07);
+    color: var(--base00);
 }
 
 .nav-pills > li.highlight > a:hover span,
@@ -208,14 +217,6 @@ html {
 .nav-pills > li.notification > a:active span,
 .nav-pills > li.notification > a:focus span {
     background-color: transparent;
-}
-
-.nav-pills li:nth-child(2n+1) {
-    background: var(--base01);
-}
-
-.nav-pills > li > a {
-    color: var(--base05);
 }
 
 tr.bufferline:hover {
@@ -265,10 +266,12 @@ tr.bufferline:hover {
     border-color: var(--base02);
     color: var(--base05);
 }
+
+.btn-primary:focus,
 .btn-primary:hover {
-    background-color: var(--base02);
+    background-color: var(--base0D);
     border-color: var(--base03);
-    color: var(--base06);
+    color: var(--base01);
 }
 
 .btn-primary.active,
@@ -282,16 +285,30 @@ tr.bufferline:hover {
 .btn-primary.active:hover,
 .btn-primary:active:hover {
     background-color: var(--base07);
-    border-color: var(--base06);
+    border: 0;
     color: var(--base01);
+    outline-color: var(--base0D);
 }
 
 ::-webkit-scrollbar-track-piece  {
     background-color: var(--base00);
+    border-left: 1px var(--base01);
 }
 ::-webkit-scrollbar-thumb:vertical {
     height: 15px;
-    background: var(--base02);
+    background: var(--base01);
+}
+
+#sidebar::-webkit-scrollbar-track-piece,
+#nicklist::-webkit-scrollbar-track-piece {
+    background-color: var(--base01);
+    border-left: 1px var(--base00);
+}
+
+#sidebar::-webkit-scrollbar-thumb:vertical,
+#nicklist::-webkit-scrollbar-thumb:vertical {
+    height: 15px;
+    background: var(--base00);
 }
 
 .gb-modal .backdrop {
@@ -323,10 +340,6 @@ input[type=text]:-moz-placeholder, input[type=password]:-moz-placeholder { /* Fi
 .badge,
 .nav-pills li span.badge {
     color: var(--base06);
-    background: var(--base02);
-}
-
-.nav-pills li:nth-child(2n+1) span.badge {
     background: var(--base03);
 }
 
@@ -337,7 +350,7 @@ input[type=text]:-moz-placeholder, input[type=password]:-moz-placeholder { /* Fi
 
 .btn-send:hover, .btn-send:focus,
 .btn-send-image:hover, .btn-send-image:focus {
-    background-color: var(--base07);
+    background-color: var(--base0D);
     color: var(--base01);
 }
 
@@ -360,17 +373,35 @@ input[type=text]:-moz-placeholder, input[type=password]:-moz-placeholder { /* Fi
 
 #topbar .actions {
     background: var(--base02);
+    overflow: hidden;
 }
 
 #topbar .actions > a {
-    background: transparent;
+    background: var(--base01);
+    border: 1px solid var(--base02);
+    border-radius: 4px;
+    height: 100%;
+}
+
+#topbar .actions > a:hover {
+    background: var(--base0D);
+    border-color: var(--base02);
+}
+
+#topbar .actions > a:focus {
+    background: var(--base01);
+    border: 1px solid var(--base06);
 }
 
 #topbar > .title > span:last-of-type:before {
     color: var(--base04);
 }
 
-#sidebar, .panel, .dropdown-menu, .modal-content {
+#sidebar, #nicklist {
+    background: var(--base01);
+}
+
+.panel, .dropdown-menu, .modal-content {
     background: var(--base00);
 }
 
@@ -404,14 +435,38 @@ input[type=text]:-moz-placeholder, input[type=password]:-moz-placeholder { /* Fi
     border-bottom-color: var(--base00);
 }
 
-button.close {
-    color: var(--base05);
-    opacity: 1;
+button.close,
+button.close:focus,
+button.close:hover {
     text-shadow: none;
+    opacity: 1;
 }
 
+button.close {
+    background-color: var(--base01);
+    border-color: var(--base02);
+    color: var(--base05);
+}
+
+button.close:focus,
 button.close:hover {
+    background-color: var(--base0D);
+    border-color: var(--base03);
+    color: var(--base01);
+}
+
+button.close.active,
+button.close:active,
+button.close.focus,
+button.close:focus,
+button.close.active.focus,
+button.close.active:focus,
+button.close:active.focus,
+button.close:active:focus,
+button.close.active:hover,
+button.close:active:hover {
     background-color: var(--base07);
+    border-color: var(--base06);
     color: var(--base01);
 }
 
@@ -524,7 +579,7 @@ button.close:hover {
     color: var(--base0B);
 }
 .cof-emphasis {
-    color: var(--base07);
+    color: var(--base06);
 }
 .cof-chat_day_change {
     color: var(--base0C);
@@ -593,7 +648,7 @@ button.close:hover {
 .cob-chat_nick_offline {
 }
 .cob-chat_nick_offline_highlight {
-    background-color: var(--base02);
+    background-color: var(--base03);
 }
 .cob-chat_nick_prefix {
 }
