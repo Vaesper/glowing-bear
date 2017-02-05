@@ -107,7 +107,7 @@ weechat.controller('WeechatCtrl', ['$rootScope', '$scope', '$store', '$timeout',
     // except for local instances (testing or electron)
     $scope.show_tls_warning = (window.location.protocol !== "https:") &&
         (["localhost", "127.0.0.1", "::1"].indexOf(window.location.hostname) === -1) &&
-        !window.is_electron;
+        !window.is_electron && !window.cordova;
 
     if (window.is_electron) {
         // Use packaged emojione sprite in the electron app
@@ -445,6 +445,10 @@ weechat.controller('WeechatCtrl', ['$rootScope', '$scope', '$store', '$timeout',
     });
     // Update font size when changed
     settings.addCallback('fontsize', function(fontsize) {
+        // If no unit is specified, it should be pixels
+        if (fontsize.match(/^[0-9]+$/)) {
+            fontsize += 'px';
+        }
         utils.changeClassStyle('favorite-font', 'fontSize', fontsize);
     });
 
